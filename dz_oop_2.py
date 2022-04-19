@@ -15,3 +15,33 @@
 #    относится ли эта буква к английскому алфавиту.
 # 5. Переопределите метод letters_num() - пусть в текущем классе он будет возвращать значение свойства __letters_num.
 # 6. Создайте статический метод example(), который будет возвращать пример текста на английском языке.
+
+from string import ascii_uppercase
+
+
+class Alphabet:
+
+    def __init__(self, lang, letters):
+        self.lang = lang
+        self.letters = letters
+
+
+    def print(self):
+        return print(self.letters)
+
+    def letters_num(self):
+        return print(len(self.letters))
+
+
+class EngAlphabet(Alphabet):
+
+    def __init__(self):
+        super().__init__(lang='En', letters=ascii_uppercase)
+        self.__letters_num = len(self.letters)
+
+    def is_en_letter(self, a):
+        if a in self.letters:
+            print('This letter is the English!')
+        else:
+            print("This letter isn't English!")
+
